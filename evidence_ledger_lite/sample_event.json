@@ -1,0 +1,18 @@
+{
+  "actor": "kartjourney-demo",
+  "action": "EVIDENCE_SNAPSHOT_ADDED",
+  "entity_type": "SKU",
+  "entity_id": "SANRIO-123",
+  "payload": {
+    "note": "Public shopper signal captured",
+    "availability": "OUT_OF_STOCK",
+    "promise": "Tomorrow"
+  },
+  "evidence_refs": [
+    {
+      "type": "url",
+      "value": "https://www.example.com/product/xyz",
+      "captured_at": "2026-02-07T12:00:00Z"
+    }
+  ]
+}
