@@ -13,7 +13,44 @@ This library provides a small, deterministic, tamper-evident JSONL ledger.
 - End-to-end verification
 
 ## Install (local dev)
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -e .[dev]
+  ```bash
+  python -m venv .venv
+  source .venv/bin/activate
+  pip install -e .[dev]
+
+Quickstart
+  evidence-ledger init demo_ledger.jsonl
+  evidence-ledger append demo_ledger.jsonl --event examples/sample_event.json
+  evidence-ledger verify demo_ledger.jsonl
+
+Python usage
+  from evidence_ledger_lite import Ledger, LedgerEvent
+
+  ledger = Ledger("audit.jsonl")
+  ledger.init()
+
+  ledger.append(LedgerEvent(
+    actor="service",
+    action="INGEST_PUBLIC_SIGNAL",
+    entity_type="SKU",
+    entity_id="ABC",
+    payload={"payload_hash": "sha256:..."}
+  ))
+
+print(ledger.verify())
+
+Threat model (honest)
+
+Protects against:
+
+  Silent modifications to past events
+
+  Undetected deletion/insertion of events
+
+Does not protect against:
+
+  Deleting the entire ledger file (store it durably)
+
+  Compromised runtime that writes false events
+
+  Key management / signatures (future extension)
