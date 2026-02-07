@@ -186,7 +186,7 @@
       same "printed page" as the copyright notice for easier
       identification within third-party archives.
 
-   Copyright [yyyy] [name of copyright owner]
+   Copyright [2006] [Rohit Rajdev]
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -199,3 +199,24 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
+
+---
+
+# 12) `LICENSE` (Apache-2.0)
+Use the standard Apache-2.0 license text (GitHub can auto-add).
+
+---
+
+# 13) `CITATION.cff` (good EB-1 optics)
+```yaml
+cff-version: 1.2.0
+title: "evidence-ledger-lite"
+message: "If you use this software, please cite it."
+authors:
+  - family-names: "Rajdev"
+    given-names: "Rohit"
+version: 0.1.0
+date-released: 2026-02-07
+license: Apache-2.0
+repository-code: "https://github.com/<your-handle>/evidence-ledger-lite"
